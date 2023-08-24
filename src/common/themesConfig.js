@@ -10,8 +10,12 @@ export const theme = createTheme({
       primary: "grey",
       secondary: "black",
     },
+    background: {
+      default: "#000"
+    },
   },
   typography: {
     fontFamily: "Plus Jakarta Sans",
   },
+  
 });
