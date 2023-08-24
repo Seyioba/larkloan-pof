@@ -100,8 +100,6 @@ export const PublicLayout = () => {
 								</Grid>
 								<Grid item xs={9}>
 									<Box
-                  container
-                  justifyContent="center"
 										sx={{ background: "white", borderRadius: 2, py: 4, px: 4, maxWidth: "448px" }}
 									>
 										<Typography
