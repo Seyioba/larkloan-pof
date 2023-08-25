@@ -30,6 +30,8 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 
+import Footer from "./Footer";
+
 export const PublicLayout = () => {
 	return (
 		<>
@@ -313,6 +315,7 @@ export const PublicLayout = () => {
 							<br />
 							{/* <Typography sx={{ color: "white" }}>Some Text Here</Typography> */}
 						</Grid>
+						<Footer/>
 					</Grid>
 				</Grid>
 			</Grid>

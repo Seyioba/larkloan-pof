@@ -25,4 +25,11 @@ export const styles = {
 		backgroundRepeat: "no-repeat",
 		minHeight: "100vh",
 	},
+  footer:{
+    color: "white",
+    fontWeight: 600,
+    fontSize: "14px",
+    fontFamily: "Plus Jakarta Sans",
+    paddingLeft: "10px"
+  }
 };
