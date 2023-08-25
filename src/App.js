@@ -5,14 +5,15 @@ import { theme } from "./common/themesConfig";
 import { Register } from "./features/register/Register";
 // import { Login } from "./features/login/Login";
 import { Login } from "./features/login/LoginB";
+import {GetStarted} from "./features/gettingStarted/GettingStarted"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Login />} /> */}
           <Route path="/" element={<Login />} />
+          <Route path="/getstarted" element={<GetStarted />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>

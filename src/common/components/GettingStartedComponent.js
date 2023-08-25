@@ -22,15 +22,25 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+import { red } from "@mui/material/colors";
 
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
+// import Box from '@mui/material/Box';
+// import Card from '@mui/material/Card';
+// import CardActions from '@mui/material/CardActions';
+// // import CardContent from '@mui/material/CardContent';
+// import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
 
-export const PublicLayout = () => {
+// const bull = (
+//   <Box
+//     component="span"
+//     sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+//   >
+//     •
+//   </Box>
+// );
+
+export const GettingStarted = () => {
 	return (
 		<>
 			<Grid
@@ -39,75 +49,57 @@ export const PublicLayout = () => {
 						// xs: "none",
 						md: "block",
 						minHeight: "100vh",
-						backgroundImage: `url(${sideImage}})`,
+						// backgroundImage: "url('../images/logo-sm.png')",
 						// backgroundColor: "yellow"
 					},
 				}}
 			>
 				<Grid container>
 					<Grid
+						container
 						item
 						xs={false}
 						md={4}
+						// image={sideImage}
 						sx={{
 							display: {
 								xs: "none",
 								md: "block",
 								// height: "100vh",
 								// backgroundImage: "url('../images/logo-sm.png')",
-								// backgroundColor: "yellow"
+								// backgroundColor: "yellow",
+								backgroundImage: `url(${sideImage})`,
 							},
 						}}
 					>
-							<Grid item pl={2}
-							sx={{
-								width: "100%",
-								// height:"100%",
-								color: "white",
-								backgroundColor: "transparent",
-								// backgroundImage: `url(${sideImage})`,
-								position: "absolute",
-								// flex: "",
-								bottom: "0",
-							}}>
-								<Typography
-									sx={{
-										// color: "primary.main",
-										fontSize: 40,
-										fontStyle: "normal",
-										fontWeight: 800,
-										lineHeight: "normal",
-										letterSpacing: -1,
-										lineHeight: "60px"
-									}}
-								>
-									Affordable Financing <br />
-									For Nigerian
-									<br />
-									Businesses.
-								</Typography>
-								<br/>
-								<Typography
-									sx={{ fontSize: 16,
-										fontStyle: "normal",
-										fontWeight: 600,
-										lineHeight: "normal",
-										letterSpacing: 0,
-										lineHeight: "27.2px" }}
-									// color="text.secondary"
-								>
-									Get the financial support you need to bring your business
-									<br />
-									dreams to life. With our simple application process and fast<br/>
-									approvals, you can start building your future today.
-								</Typography>
-							</Grid>
-						
-						<CardMedia
+						<div style={{ backgroundImage: `url(${sideImage})` }}>
+							Hello World
+						</div>
+						{/* <CardMedia
+							item
 							sx={{ height: "100%" }}
 							image={sideImage}
 							title="Image"
-						/>
+						/> */}
+						{/* <Grid
+							sx={{
+								position: "absolute",
+								bottom: 0,
+								left: 0,
+								width: "100%",
+								padding: "20px",
+								backgroundColor: "rgba(0, 0, 0, 0.5)",
+								color: "white",
+								// textAlign: center,
+							}}
+						>
+							some text
+						</Grid> */}
+						{/* <CardMedia
+							sx={{ height: "100%" }}
+							image={sideImage}
+							title="Image"
+						/> */}
 
 						{/* <Box component="img" src={sideImage} width="100%" height="100%" /> */}
 					</Grid>
@@ -158,7 +150,7 @@ export const PublicLayout = () => {
 											borderRadius: 2,
 											py: 4,
 											px: 4,
-											// maxWidth: "448px",
+											maxWidth: "448px",
 											justifyContent: "center",
 										}}
 									>
@@ -166,7 +158,7 @@ export const PublicLayout = () => {
 											variant="h6"
 											sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
 										>
-											Create An Account
+											Getting Started
 										</Typography>
 										<Typography
 											sx={{
@@ -176,8 +168,7 @@ export const PublicLayout = () => {
 												fontSize: 12,
 											}}
 										>
-											Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet.
-											Lorem Ipsum Dolor
+											Fill in your details to get started.
 										</Typography>
 
 										<Grid
@@ -243,70 +234,65 @@ export const PublicLayout = () => {
 													sx={styles.textField}
 												/>
 											</Grid>
-
 											<Grid item>
 												<Typography
 													variant="body1"
 													sx={{ fontWeight: 600, fontSize: "10px" }}
 												>
-													DOB
-												</Typography>
-												<LocalizationProvider dateAdapter={AdapterDayjs}>
-													<DatePicker sx={styles.datePicker} />
-												</LocalizationProvider>
-											</Grid>
-
-											<Grid item>
-												<Typography
-													variant="body1"
-													sx={{ fontWeight: 600, fontSize: "10px" }}
-												>
-													Password
+													Email Address
 												</Typography>
 												<TextField
 													variant="outlined"
 													fullWidth
-													type="password"
-													// placeholder=""
+													placeholder="e.g. johndoe@gmail.com"
 													sx={styles.textField}
 												/>
 											</Grid>
 											<Grid item>
 												<Typography
 													variant="body1"
-													sx={{ fontWeight: 500, fontSize: "10px" }}
+													sx={{ fontWeight: 600, fontSize: "10px" }}
 												>
-													<ListItem sx={{ display: "list-item" }}>
-														Eight (8) or more alphabetical characters
-													</ListItem>
-													<ListItem sx={{ display: "list-item" }}>
-														one (1) or more uppercase character(s)
-													</ListItem>
-													<ListItem sx={{ display: "list-item" }}>
-														One(1) or more numerical character(s)
-													</ListItem>
-													<ListItem sx={{ display: "list-item" }}>
-														One(1) or more special character(s)
-													</ListItem>
+													Phone Number
 												</Typography>
+												<TextField
+													variant="outlined"
+													fullWidth
+													placeholder="e.g. 12345678901"
+													sx={styles.textField}
+												/>
 											</Grid>
-
 											<Grid item>
 												<Typography
 													variant="body1"
 													sx={{ fontWeight: 600, fontSize: "10px" }}
 												>
-													Confirm Password
+													Email Address
 												</Typography>
 												<TextField
 													variant="outlined"
 													fullWidth
-													type="password"
-													// placeholder="e.g. 12345678901"
+													placeholder="e.g. johndoe@gmail.com"
+													sx={styles.textField}
+												/>
+											</Grid>
+											<Grid item>
+												<Typography
+													variant="body1"
+													sx={{ fontWeight: 600, fontSize: "10px" }}
+												>
+													Phone Number
+												</Typography>
+												<TextField
+													variant="outlined"
+													fullWidth
+													placeholder="e.g. 12345678901"
 													sx={styles.textField}
 												/>
 											</Grid>
 										</Grid>
+
+										<Box component="form"></Box>
 									</Box>
 								</Grid>
 							</Grid>
