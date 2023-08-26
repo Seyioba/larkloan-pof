@@ -1,5 +1,6 @@
 import {
 	Box,
+	Stack,
 	CardMedia,
 	Container,
 	Grid,
@@ -13,6 +14,7 @@ import {
 	ListItem,
 	Button,
 } from "@mui/material";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import React from "react";
 import sideImage from "../images/Frame 47417.png";
 import logo from "../images/logo-sm.png";
@@ -40,7 +42,7 @@ import { red } from "@mui/material/colors";
 //   </Box>
 // );
 
-export const GettingStarted = () => {
+export const Personal = () => {
 	return (
 		<>
 			<Grid
@@ -158,7 +160,7 @@ export const GettingStarted = () => {
 											variant="h6"
 											sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
 										>
-											Getting Started
+											Personal
 										</Typography>
 										<Typography
 											sx={{
@@ -168,7 +170,8 @@ export const GettingStarted = () => {
 												fontSize: 12,
 											}}
 										>
-											Fill in your details to get started.
+											Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet.
+											Lorem Ipsum Dolor
 										</Typography>
 
 										<Grid
@@ -245,10 +248,30 @@ export const GettingStarted = () => {
 													<DatePicker sx={styles.datePicker} />
 												</LocalizationProvider>
 											</Grid>
+											<Grid
+												container
+												item
+												spacing={0}
+												direction="column"
+												alignItems="center"
+												justifyContent="center"
+												// sx={{ minHeight: "100vh" }}
+											>
+												<Grid item sx={{ justifySelf: "center" }}>
+												{/* <Stack> */}
+												<Button variant="contained" sx={{ width: "48px", height:"48px" }}>
+													<ArrowBackIcon/>
+												</Button>
+												<Button variant="contained" sx={{ marginLeft: "10px", height:"48px", width: "341px" }}>
+													Contained
+												</Button>
+												{/* </Stack> */}
+											</Grid>
+											</Grid>
 											
 										</Grid>
 
-										<Box component="form"></Box>
+										{/* <Box component="form"></Box> */}
 									</Box>
 								</Grid>
 							</Grid>

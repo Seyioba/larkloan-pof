@@ -5,7 +5,8 @@ import { theme } from "./common/themesConfig";
 import { Register } from "./features/register/Register";
 // import { Login } from "./features/login/Login";
 import { Login } from "./features/login/LoginB";
-import {GetStarted} from "./features/gettingStarted/GettingStarted"
+import {GetStarted} from "./features/gettingStarted/GettingStarted";
+import { Personal } from "./common/components/PersonalComponent";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/getstarted" element={<GetStarted />} />
+          <Route path="/personal" element={<Personal />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
