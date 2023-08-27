@@ -5,7 +5,7 @@ import { theme } from "./common/themesConfig";
 import { Register } from "./features/register/Register";
 // import { Login } from "./features/login/Login";
 import { Login } from "./features/login/LoginB";
-import {GetStarted} from "./features/gettingStarted/GettingStarted";
+import { GetStarted } from "./features/gettingStarted/GettingStarted";
 import { Personal } from "./common/components/PersonalComponent";
 
 function App() {
