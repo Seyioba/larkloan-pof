@@ -233,7 +233,7 @@ export const Personal = () => {
 												<TextField
 													variant="outlined"
 													fullWidth
-													placeholder="e.g. 12345678901"
+													placeholder="e.g. 0801 234 5678"
 													sx={styles.textField}
 												/>
 											</Grid>

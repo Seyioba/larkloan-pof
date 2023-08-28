@@ -1,5 +1,13 @@
 import React from "react";
+import { CreateAccount } from "./CreateAccount";
+import { PublicLayout } from "../../common/components/PublicLayout";
+import { Identification } from "./Identification";
 
 export const Register = () => {
-  return <div>Register</div>;
+  return (
+    <PublicLayout>
+      {/* <CreateAccount /> */}
+      <Identification />
+    </PublicLayout>
+  );
 };

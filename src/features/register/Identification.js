@@ -1,34 +1,11 @@
-<Grid container direction="column" spacing={4}>
-  <Grid item xs={3} pl={8} pr={8}>
-    <Box display="flex" justifyContent="center" pt={2}>
-      <Box component="img" src={logo} pr={1} />
-      <Typography
-        sx={{
-          color: "primary.main",
-          fontSize: 27,
-          fontStyle: "normal",
-          fontWeight: 800,
-          lineHeight: "normal",
-          letterSpacing: -1,
-        }}
-      >
-        Lark
-      </Typography>
-      <Typography
-        sx={{
-          color: "white",
-          fontSize: 27,
-          fontStyle: "normal",
-          fontWeight: 800,
-          lineHeight: "normal",
-          letterSpacing: -1,
-        }}
-      >
-        loan
-      </Typography>
-    </Box>
-  </Grid>
-  <Grid item xs={9}>
+import { Box, Grid, ListItem, TextField, Typography } from "@mui/material";
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import React from "react";
+import { styles } from "../../common/styles";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+
+export const Identification = () => {
+  return (
     <Box
       sx={{
         background: "white",
@@ -43,7 +20,7 @@
         variant="h6"
         sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
       >
-        Residence
+        Identification
       </Typography>
       <Typography
         sx={{
@@ -114,38 +91,7 @@
             sx={styles.textField}
           />
         </Grid>
-
-        <Grid
-          container
-          item
-          spacing={0}
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-          // sx={{ minHeight: "100vh" }}
-        >
-          <Grid item sx={{ justifySelf: "center" }}>
-            {/* <Stack> */}
-            <Button
-              variant="contained"
-              sx={{
-                width: "48px",
-                height: "48px",
-                color: "white",
-                backgroundColor: "#9A9FBF",
-              }}
-            >
-              <ArrowBackIcon />
-            </Button>
-            {/* <Button variant="contained" sx={{ marginLeft: "10px", height:"48px", width: "341px",  }}>
-													Next
-												</Button> */}
-            {/* </Stack> */}
-          </Grid>
-        </Grid>
       </Grid>
-
-      {/* <Box component="form"></Box> */}
     </Box>
-  </Grid>
-</Grid>;
+  );
+};

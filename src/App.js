@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { theme } from "./common/themesConfig";
 import { Register } from "./features/register/Register";
 // import { Login } from "./features/login/Login";
-import { Login } from "./features/login/LoginB";
+import { Login } from "./features/login/Login";
 import { GetStarted } from "./features/gettingStarted/GettingStarted";
-import { Personal } from "./common/components/PersonalComponent";
+import { PersonalPage } from "./features/gettingStarted/Personal";
+import { ResidencePage } from "./features/gettingStarted/Residence";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/getstarted" element={<GetStarted />} />
-          <Route path="/personal" element={<Personal />} />
+          <Route path="/personal" element={<PersonalPage />} />
+          <Route path="/residence" element={<ResidencePage />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
