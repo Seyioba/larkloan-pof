@@ -4,7 +4,7 @@ import React from "react";
 import { styles } from "../../common/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-export const CreateAccount = () => {
+export const Bank = () => {
   return (
     <Box
       sx={{
@@ -40,49 +40,7 @@ export const CreateAccount = () => {
             variant="body1"
             sx={{ fontWeight: 600, fontSize: "10px" }}
           >
-            First Name
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. John"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Last Name
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. Doe"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Email Address
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. johndoe@gmail.com"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Phone Number
+            BVN
           </Typography>
           <TextField
             variant="outlined"
@@ -91,66 +49,45 @@ export const CreateAccount = () => {
             sx={styles.textField}
           />
         </Grid>
-
         <Grid item>
           <Typography
             variant="body1"
             sx={{ fontWeight: 600, fontSize: "10px" }}
           >
-            DOB
-          </Typography>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker sx={styles.datePicker} />
-          </LocalizationProvider>
-        </Grid>
-
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Password
+            Bank Name
           </Typography>
           <TextField
             variant="outlined"
             fullWidth
-            type="password"
-            // placeholder=""
+            placeholder="Please Select"
             sx={styles.textField}
           />
         </Grid>
         <Grid item>
           <Typography
             variant="body1"
-            sx={{ fontWeight: 500, fontSize: "10px" }}
+            sx={{ fontWeight: 600, fontSize: "10px" }}
           >
-            <ListItem sx={{ display: "list-item" }}>
-              Eight (8) or more alphabetical characters
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              one (1) or more uppercase character(s)
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              One(1) or more numerical character(s)
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              One(1) or more special character(s)
-            </ListItem>
+            Bank Account Number
           </Typography>
+          <TextField
+            variant="outlined"
+            fullWidth
+            placeholder="e.g. 1234567890"
+            sx={styles.textField}
+          />
         </Grid>
-
         <Grid item>
           <Typography
             variant="body1"
             sx={{ fontWeight: 600, fontSize: "10px" }}
           >
-            Confirm Password
+            Bank Account Name
           </Typography>
           <TextField
             variant="outlined"
             fullWidth
-            type="password"
-            // placeholder="e.g. 12345678901"
+            placeholder="e.g. John Doe"
             sx={styles.textField}
           />
         </Grid>

@@ -166,7 +166,13 @@ export const PublicLayout = ({ children }) => {
               <br />
               {/* <Typography sx={{ color: "white" }}>Some Text Here</Typography> */}
             </Grid>
-            <Footer />
+            <Grid item xs={11} md={6}>
+              {/* <br />
+              <br />
+              <br />
+              <br /> */}
+              <Footer />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

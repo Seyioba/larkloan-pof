@@ -86,6 +86,8 @@ export const Identification = () => {
           </Typography>
           <TextField
             variant="outlined"
+            type="file"
+            hidden
             fullWidth
             placeholder="e.g. 0801 234 5678"
             sx={styles.textField}
