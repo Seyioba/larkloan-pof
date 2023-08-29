@@ -52,5 +52,9 @@ export const styles = {
     paddingLeft: "10px",
     // position: "absolute",
     // bottom: 0,
+    display: {
+      xs: "none",
+      md: "block",
+    },
   },
 };

@@ -55,16 +55,33 @@ export const PublicLayout = ({ children }) => {
               display: {
                 xs: "none",
                 md: "block",
+                position: "relative",
                 // height: "100vh",
                 // backgroundImage: "url('../images/logo-sm.png')",
                 // backgroundColor: "yellow"
               },
             }}
           >
+            {/* <Grid
+              item
+              sx={{
+                width: "100%",
+                // height:"100%",
+                color: "white",
+                backgroundColor: "transparent",
+                // backgroundImage: `url(${sideImage})`,
+                position: "relative",
+                // flex: "",
+                // bottom: "0",
+              }}
+            >
+
+            </Grid> */}
             <Grid
               item
-              pl={2}
-              md={4}
+              pl={2.5}
+              pr={2.5}
+              // md={4}
               sx={{
                 width: "100%",
                 // height:"100%",

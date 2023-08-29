@@ -25,6 +25,48 @@ export const CreateAccount = () => {
         justifyContent: "center",
       }}
     >
+      <Grid
+        container
+        item
+        position="relative"
+        direction="column"
+        // alignContent="center"
+        alignItems="center"
+        // alignSelf="center"
+        // justifyContent="center"
+        // justifyItems="center"
+        // justifySelf="center"
+        // textAlign="center"
+      >
+        <Box
+          container
+          // fullWidth
+          item
+          md={6}
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          sx={{
+            backgroundColor: "primary.main",
+            // mt: 2,
+            ml: -1,
+            pt: 1,
+            pb: 1,
+            borderRadius: "30px",
+            position: "absolute",
+            top: -55,
+            pl: 2.5,
+            pr: 2.5,
+            // right: "50%",
+            // left: "35%",
+            // width: "300px",
+          }}
+        >
+          <Typography sx={{ color: "white", width: "100%" }}>Retail</Typography>
+        </Box>
+      </Grid>
       <Typography
         variant="h6"
         sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
@@ -260,7 +302,14 @@ export const CreateAccount = () => {
               mt: -1,
             }}
           >
-            I agree to the Terms & Conditions and Privacy Policy
+            I agree to the{" "}
+            <Link href="/" sx={{ color: "black" }}>
+              Terms & Conditions
+            </Link>{" "}
+            and{" "}
+            <Link href="/" sx={{ color: "black" }}>
+              Privacy Policy
+            </Link>
           </Typography>
         </Grid>
       </Grid>
