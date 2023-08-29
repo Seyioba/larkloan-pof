@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
   Input,
+  Link,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import AddIcon from "@mui/icons-material/Add";
@@ -109,6 +110,14 @@ export const Residence = () => {
               height: "40px",
             }}
           >
+            <TextField
+              variant="outlined"
+              type="file"
+              hidden
+              fullWidth
+              placeholder="e.g. 0801 234 5678"
+              sx={styles.inputFile}
+            />
             <AddIcon sx={{ maxHeight: "16px", color: "#27AE60" }} />
             Upload
           </Button>
@@ -125,17 +134,20 @@ export const Residence = () => {
         >
           <Grid item sx={{ justifySelf: "center" }}>
             {/* <Stack> */}
-            <Button
-              variant="contained"
-              sx={{
-                width: "48px",
-                height: "48px",
-                color: "white",
-                backgroundColor: "#9A9FBF",
-              }}
-            >
-              <ArrowBackIcon />
-            </Button>
+            <Link href="/" underline="none">
+              <Button
+                variant="contained"
+                sx={{
+                  width: "48px",
+                  height: "48px",
+                  color: "white",
+                  backgroundColor: "#9A9FBF",
+                }}
+              >
+                <ArrowBackIcon />
+              </Button>
+            </Link>
+
             {/* <Button variant="contained" sx={{ marginLeft: "10px", height:"48px", width: "341px",  }}>
 													Next
 												</Button> */}

@@ -1,151 +1,92 @@
-<Grid container direction="column" spacing={4}>
-  <Grid item xs={3} pl={8} pr={8}>
-    <Box display="flex" justifyContent="center" pt={2}>
-      <Box component="img" src={logo} pr={1} />
-      <Typography
-        sx={{
-          color: "primary.main",
-          fontSize: 27,
-          fontStyle: "normal",
-          fontWeight: 800,
-          lineHeight: "normal",
-          letterSpacing: -1,
-        }}
-      >
-        Lark
-      </Typography>
-      <Typography
-        sx={{
-          color: "white",
-          fontSize: 27,
-          fontStyle: "normal",
-          fontWeight: 800,
-          lineHeight: "normal",
-          letterSpacing: -1,
-        }}
-      >
-        loan
-      </Typography>
-    </Box>
-  </Grid>
-  <Grid item xs={9}>
-    <Box
-      sx={{
-        background: "white",
-        borderRadius: 2,
-        py: 4,
-        px: 4,
-        // maxWidth: "448px",
-        justifyContent: "center",
-      }}
+// ... (import statements and other code)
+import {
+  Box,
+  CardMedia,
+  Container,
+  Grid,
+  TextField,
+  Typography,
+  Card,
+  CardActions,
+  CardActionArea,
+  CardContent,
+  DateField,
+  ListItem,
+  Button,
+} from "@mui/material";
+import React from "react";
+import sideImage from "../images/Frame 47417.png";
+import logo from "../images/logo-sm.png";
+import { styles } from "../styles";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
+import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
+
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import ImageListItemBar from "@mui/material/ImageListItemBar";
+import ListSubheader from "@mui/material/ListSubheader";
+import IconButton from "@mui/material/IconButton";
+import InfoIcon from "@mui/icons-material/Info";
+
+import Footer from "./Footer";
+
+export const PublicLayout = ({ children }) => {
+  return (
+    <div
+      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
     >
-      <Typography
-        variant="h6"
-        sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
-      >
-        Residence
-      </Typography>
-      <Typography
+      <Grid
         sx={{
-          fontWeight: 600,
-          textAlign: "center",
-          pb: 2,
-          fontSize: 12,
+          // ... (styles for the background grid)
+          display: {
+            // xs: "none",
+            md: "block",
+            minHeight: "100vh",
+            backgroundImage: `url(${sideImage}})`,
+            // backgroundColor: "yellow"
+          },
         }}
       >
-        Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet. Lorem Ipsum
-        Dolor
-      </Typography>
-
-      <Grid container direction={"column"} spacing={3} component="form" pt={1}>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Residential Address
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="26, Adeyemo close, off Alake Street"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            City
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Ojota"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            State
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Lagos"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Utility Bill
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. 0801 234 5678"
-            sx={styles.textField}
-          />
-        </Grid>
-
-        <Grid
-          container
-          item
-          spacing={0}
-          direction="column"
-          alignItems="center"
-          justifyContent="center"
-          // sx={{ minHeight: "100vh" }}
-        >
-          <Grid item sx={{ justifySelf: "center" }}>
-            {/* <Stack> */}
-            <Button
-              variant="contained"
-              sx={{
-                width: "48px",
-                height: "48px",
-                color: "white",
-                backgroundColor: "#9A9FBF",
-              }}
-            >
-              <ArrowBackIcon />
-            </Button>
-            {/* <Button variant="contained" sx={{ marginLeft: "10px", height:"48px", width: "341px",  }}>
-													Next
-												</Button> */}
-            {/* </Stack> */}
-          </Grid>
-        </Grid>
+        {/* ... (background grid content) */}
       </Grid>
 
-      {/* <Box component="form"></Box> */}
-    </Box>
-  </Grid>
-</Grid>;
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          alignItems: "flex-end",
+          position: "relative",
+        }}
+      >
+        <Grid
+          item
+          xs={false}
+          md={4}
+          sx={
+            {
+              // ... (styles for the left grid)
+            }
+          }
+        >
+          <Grid
+            item
+            pl={2}
+            sx={{
+              // ... (styles for the text content)
+
+              bottom: 0,
+              position: "absolute",
+            }}
+          >
+            {/* ... (text content) */}
+          </Grid>
+        </Grid>
+
+        {/* ... (right grid content) */}
+      </div>
+    </div>
+  );
+};

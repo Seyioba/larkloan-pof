@@ -64,6 +64,7 @@ export const PublicLayout = ({ children }) => {
             <Grid
               item
               pl={2}
+              md={4}
               sx={{
                 width: "100%",
                 // height:"100%",
@@ -78,36 +79,35 @@ export const PublicLayout = ({ children }) => {
               <Typography
                 sx={{
                   // color: "primary.main",
-                  fontSize: 40,
+                  // fontSize: "30px",
+                  fontSize: "3vw",
                   fontStyle: "normal",
                   fontWeight: 800,
-                  lineHeight: "normal",
+                  // lineHeight: "30px",
+                  spacing: "30px",
                   letterSpacing: -1,
                   lineHeight: "60px",
+                  wordWrap: "breakWord",
                 }}
               >
-                Affordable Financing <br />
-                For Nigerian
-                <br />
-                Businesses.
+                Affordable Financing For Nigerian Businesses.
               </Typography>
               <br />
               <Typography
                 sx={{
                   fontSize: 16,
+                  // fontSize: "1.2vw",
                   fontStyle: "normal",
                   fontWeight: 600,
                   lineHeight: "normal",
-                  letterSpacing: 0,
+                  letterSpacing: -0.5,
                   lineHeight: "27.2px",
                 }}
                 // color="text.secondary"
               >
-                Get the financial support you need to bring your business
-                <br />
-                dreams to life. With our simple application process and fast
-                <br />
-                approvals, you can start building your future today.
+                Get the financial support you need to bring your business dreams
+                to life. With our simple application process and fast approvals,
+                you can start building your future today.
               </Typography>
             </Grid>
 
@@ -159,18 +159,18 @@ export const PublicLayout = ({ children }) => {
                     </Typography>
                   </Box>
                 </Grid>
-                <Grid item xs={9}>
+                <Grid
+                  item
+                  xs={9}
+                  sx={{ maxHeight: "2000px", minHeight: "640px" }}
+                >
                   {children}
                 </Grid>
               </Grid>
               <br />
               {/* <Typography sx={{ color: "white" }}>Some Text Here</Typography> */}
             </Grid>
-            <Grid item xs={11} md={6}>
-              {/* <br />
-              <br />
-              <br />
-              <br /> */}
+            <Grid container item xs={11} md={6}>
               <Footer />
             </Grid>
           </Grid>

@@ -5,7 +5,9 @@ import {
   ListItem,
   TextField,
   Typography,
+  Link,
 } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
@@ -161,8 +163,60 @@ export const CreateAccount = () => {
             sx={styles.textField}
           />
         </Grid>
+        {/* <Grid
+          container
+          fullWidth
+          item
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        > */}
+        <Box
+          container
+          // fullWidth
+          item
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+          sx={{
+            backgroundColor: "primary.main",
+            mt: 2,
+            ml: 3,
+            pt: 1.25,
+            pb: 1.25,
+            borderRadius: "8px",
+          }}
+        >
+          <Link
+            fullWidth
+            href="/"
+            underline="none"
+            sx={{ backgroundColor: "primary.main" }}
+            // sx={{ ml: "20px" }}
+          >
+            <Typography sx={{ color: "white" }}>Continue</Typography>
+          </Link>
+        </Box>
+        {/* <Stack> */}
 
-        <Grid item>
+        {/* <Button variant="contained" sx={{ marginLeft: "10px", height:"48px", width: "341px",  }}>
+													Next
+												</Button> */}
+        {/* </Stack> */}
+        {/* </Grid> */}
+
+        <Grid
+          container
+          fullWidth
+          item
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Typography
             variant="body1"
             sx={{
@@ -171,16 +225,39 @@ export const CreateAccount = () => {
               pb: 0.5,
             }}
           >
-            Already have an account? Log in
+            Already have an account?{" "}
+            <Link
+              href="/"
+              underline="none"
+              sx={{
+                fontWeight: 600,
+                fontSize: "10px",
+                pb: 1,
+                // ml: ,
+                textTransform: "capitalize",
+              }}
+            >
+              Login
+            </Link>
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid
+          container
+          fullWidth
+          item
+          spacing={0}
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+          textAlign="center"
+        >
           <Typography
             variant="body1"
             sx={{
               fontWeight: 600,
               fontSize: "12px",
               pt: -2,
+              mt: -1,
             }}
           >
             I agree to the Terms & Conditions and Privacy Policy

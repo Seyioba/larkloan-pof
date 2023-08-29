@@ -5,9 +5,6 @@ import { theme } from "./common/themesConfig";
 import { Register } from "./features/register/Register";
 // import { Login } from "./features/login/Login";
 import { Login } from "./features/login/Login";
-import { GetStarted } from "./features/gettingStarted/GettingStarted";
-import { PersonalPage } from "./features/gettingStarted/Personal";
-import { ResidencePage } from "./features/gettingStarted/Residence";
 
 function App() {
   return (
@@ -15,9 +12,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/getstarted" element={<GetStarted />} />
-          <Route path="/personal" element={<PersonalPage />} />
-          <Route path="/residence" element={<ResidencePage />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
