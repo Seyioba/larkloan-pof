@@ -79,8 +79,9 @@ export const PublicLayout = ({ children }) => {
             </Grid> */}
             <Grid
               item
-              pl={2.5}
-              pr={2.5}
+              pl={3}
+              pr={3}
+              pb={1}
               // md={4}
               sx={{
                 width: "100%",
