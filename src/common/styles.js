@@ -11,8 +11,8 @@ export const styles = {
     fontWeight: 600,
     fontSize: "10px",
     maxHeight: "40px",
-    display: "flex",
-    alignItems: "center",
+    // display: "flex",
+    // alignItems: "center",
     justifyContent: "center",
   },
   inputFile: {
