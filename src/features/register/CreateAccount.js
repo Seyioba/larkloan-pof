@@ -12,8 +12,67 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+
+const defaultValues = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  dob: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const phoneRegex =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+const schema = yup.object().shape({
+  firstName: yup.string().required("First name is required"),
+  lastName: yup.string().required("Last name is required"),
+  email: yup
+    .string()
+    .email("Please enter a valid email address")
+    .required("Email address is required"),
+  phone: yup
+    .string()
+    .matches(phoneRegex, "Enter a valid phone number")
+    .required("Phone number is required"),
+  dob: yup.date().transform(function (value, originalValue) {
+    if (this.isType(value)) {
+      return value;
+    }
+    const result = parse(originalValue, "MM/dd/yyyy", new Date());
+    return result;
+  }),
+  password: yup
+    .string()
+    .required("Password is required")
+    .matches(passwordRegex, "Password does not match required rules"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match"),
+});
 
 export const CreateAccount = () => {
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
+    defaultValues,
+    resolver: yupResolver(schema),
+    mode: "onTouched",
+  });
+
+  const onSubmit = (data) => {
+    console.log("form submitted", data);
+  };
+
   return (
     <Box
       sx={{
@@ -85,7 +144,15 @@ export const CreateAccount = () => {
         Dolor
       </Typography>
 
-      <Grid container direction={"column"} spacing={3} component="form" pt={1}>
+      <Grid
+        container
+        direction={"column"}
+        spacing={3}
+        component="form"
+        pt={1}
+        noValidate
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Grid item>
           <Typography
             variant="body1"
@@ -93,11 +160,21 @@ export const CreateAccount = () => {
           >
             First Name
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. John"
-            sx={styles.textField}
+          <Controller
+            name="firstName"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                placeholder="e.g. John"
+                error={!!errors.firstName}
+                helperText={errors.firstName?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
         <Grid item>
@@ -107,11 +184,21 @@ export const CreateAccount = () => {
           >
             Last Name
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. Doe"
-            sx={styles.textField}
+          <Controller
+            name="lastName"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                placeholder="e.g. Doe"
+                error={!!errors.lastName}
+                helperText={errors.lastName?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
         <Grid item>
@@ -121,11 +208,21 @@ export const CreateAccount = () => {
           >
             Email Address
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. johndoe@gmail.com"
-            sx={styles.textField}
+          <Controller
+            name="email"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                placeholder="e.g. johndoe@gmail.com"
+                error={!!errors.email}
+                helperText={errors.email?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
         <Grid item>
@@ -135,11 +232,21 @@ export const CreateAccount = () => {
           >
             Phone Number
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="e.g. 12345678901"
-            sx={styles.textField}
+          <Controller
+            name="phone"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                placeholder="e.g. 12345678901"
+                error={!!errors.phone}
+                helperText={errors.phone?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
 
@@ -151,7 +258,28 @@ export const CreateAccount = () => {
             DOB
           </Typography>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker sx={styles.textField} />
+            <Controller
+              name="dob"
+              control={control}
+              render={({ field }) => (
+                <DatePicker
+                  {...field}
+                  inputFormat="MM/dd/yyyy"
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      required
+                      error={!!errors.dob}
+                      helperText={errors?.fob?.message}
+                      fullWidth
+                      autoComplete="off"
+                      variant="outlined"
+                      sx={styles.textField}
+                    />
+                  )}
+                />
+              )}
+            />
           </LocalizationProvider>
         </Grid>
 
@@ -162,12 +290,21 @@ export const CreateAccount = () => {
           >
             Password
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            type="password"
-            // placeholder=""
-            sx={styles.textField}
+          <Controller
+            name="password"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                type="password"
+                error={!!errors.password}
+                helperText={errors.password?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
         <Grid item>
@@ -197,12 +334,21 @@ export const CreateAccount = () => {
           >
             Confirm Password
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            type="password"
-            // placeholder="e.g. 12345678901"
-            sx={styles.textField}
+          <Controller
+            name="confirmPassword"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                required
+                variant="outlined"
+                fullWidth
+                type="password"
+                error={!!errors.confirmPassword}
+                helperText={errors.confirmPassword?.message}
+                sx={styles.textField}
+              />
+            )}
           />
         </Grid>
         {/* <Grid
@@ -233,8 +379,9 @@ export const CreateAccount = () => {
           }}
         >
           <Link
+            component="button"
+            type="submit"
             fullWidth
-            href="/"
             underline="none"
             sx={{ backgroundColor: "primary.main" }}
             // sx={{ ml: "20px" }}
