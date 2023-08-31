@@ -62,29 +62,14 @@ export const PublicLayout = ({ children }) => {
               },
             }}
           >
-            {/* <Grid
-              item
-              sx={{
-                width: "100%",
-                // height:"100%",
-                color: "white",
-                backgroundColor: "transparent",
-                // backgroundImage: `url(${sideImage})`,
-                position: "relative",
-                // flex: "",
-                // bottom: "0",
-              }}
-            >
-
-            </Grid> */}
             <Grid
               item
               pl={3}
-              pr={3}
-              pb={1}
+              // pr={3}
+              pb={3}
               // md={4}
               sx={{
-                width: "100%",
+                width: "95%",
                 // height:"100%",
                 color: "white",
                 backgroundColor: "transparent",
@@ -98,7 +83,7 @@ export const PublicLayout = ({ children }) => {
                 sx={{
                   // color: "primary.main",
                   // fontSize: "30px",
-                  fontSize: "3vw",
+                  fontSize: "2.8vw",
                   fontStyle: "normal",
                   fontWeight: 800,
                   // lineHeight: "30px",
@@ -110,15 +95,15 @@ export const PublicLayout = ({ children }) => {
               >
                 Affordable Financing For Nigerian Businesses.
               </Typography>
-              <br />
+              {/* <br /> */}
               <Typography
                 sx={{
                   fontSize: 16,
                   // fontSize: "1.2vw",
                   fontStyle: "normal",
                   fontWeight: 600,
-                  lineHeight: "normal",
-                  letterSpacing: -0.5,
+                  // lineHeight: "normal",
+                  // letterSpacing: -0.5,
                   lineHeight: "27.2px",
                 }}
                 // color="text.secondary"

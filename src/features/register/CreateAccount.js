@@ -126,22 +126,11 @@ export const CreateAccount = () => {
           <Typography sx={{ color: "white", width: "100%" }}>Retail</Typography>
         </Box>
       </Grid>
-      <Typography
-        variant="h6"
-        sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
-      >
+      <Typography variant="h6" sx={styles.formHeader}>
         Create An Account
       </Typography>
-      <Typography
-        sx={{
-          fontWeight: 600,
-          textAlign: "center",
-          pb: 2,
-          fontSize: 12,
-        }}
-      >
-        Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet. Lorem Ipsum
-        Dolor
+      <Typography sx={styles.formSubheader}>
+        Input your details to set up your LarkLoan account.
       </Typography>
 
       <Grid
@@ -156,7 +145,7 @@ export const CreateAccount = () => {
         <Grid item>
           <Typography
             variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px", pb: 0.5 }}
+            sx={{ fontWeight: 600, fontSize: "12px", pb: 0.5 }}
           >
             First Name
           </Typography>
@@ -204,7 +193,7 @@ export const CreateAccount = () => {
         <Grid item>
           <Typography
             variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px", pb: 0.5 }}
+            sx={{ fontWeight: 600, fontSize: "12px", pb: 0.5 }}
           >
             Email Address
           </Typography>
