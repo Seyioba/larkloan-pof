@@ -2,7 +2,7 @@ import { Box, Grid, Stack, TextField, Typography, Link } from "@mui/material";
 import React from "react";
 import { styles } from "../../common/styles";
 import * as yup from "yup";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { DevTool } from "@hookform/devtools";
 
@@ -159,16 +159,21 @@ export const LoginCard = () => {
             >
               Email or Phone Number
             </Typography>
-            <TextField
+            <Controller
               name="emailOrPhone"
-              type="text"
-              variant="outlined"
-              fullWidth
-              placeholder="e.g. johndoe@gmail.com"
-              {...register("emailOrPhone")}
-              error={!!errors.emailOrPhone}
-              helperText={errors.emailOrPhone?.message}
-              sx={styles.textField}
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  placeholder="e.g. johndoe@gmail.com"
+                  error={!!errors.emailOrPhone}
+                  helperText={errors.emailOrPhone?.message}
+                  sx={styles.textField}
+                />
+              )}
             />
           </Grid>
 
@@ -179,15 +184,21 @@ export const LoginCard = () => {
             >
               Password
             </Typography>
-            <TextField
+            <Controller
               name="password"
-              variant="outlined"
-              fullWidth
-              type="password"
-              {...register("password")}
-              error={!!errors.password}
-              helperText={errors.password?.message}
-              sx={styles.textField}
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  {...field}
+                  required
+                  variant="outlined"
+                  fullWidth
+                  type="password"
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
+                  sx={styles.textField}
+                />
+              )}
             />
             {/* <VisibilityIcon /> */}
           </Grid>
