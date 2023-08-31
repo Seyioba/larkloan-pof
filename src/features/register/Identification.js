@@ -73,84 +73,15 @@ export const Identification = () => {
         </Box>
       </Grid>
 
-      <Typography
-        variant="h6"
-        sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
-      >
+      <Typography variant="h6" sx={styles.formHeader}>
         Identification
       </Typography>
-      <Typography
-        sx={{
-          fontWeight: 600,
-          textAlign: "center",
-          pb: 2,
-          fontSize: 12,
-        }}
-      >
+      <Typography sx={styles.formSubheader}>
         Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet. Lorem Ipsum
         Dolor
       </Typography>
 
       <Grid container direction={"column"} spacing={3} component="form" pt={1}>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Residential Address
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="26, Adeyemo close, off Alake Street"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            City
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Ojota"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            State
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Lagos"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            Utility Bill
-          </Typography>
-          <TextField
-            variant="outlined"
-            type="file"
-            hidden
-            fullWidth
-            placeholder="e.g. 0801 234 5678"
-            sx={styles.textField}
-          />
-        </Grid>
-
         <Grid item>
           <Typography
             variant="body1"
@@ -175,6 +106,36 @@ export const Identification = () => {
               {/* <MenuItem value="Bariga">Bariga</MenuItem> */}
             </Select>
           </FormControl>
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: 600, fontSize: "10px" }}
+          >
+            ID Number
+          </Typography>
+          <TextField
+            variant="outlined"
+            fullWidth
+            placeholder="e.g. ABC123456"
+            sx={styles.textField}
+          />
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: 600, fontSize: "10px" }}
+          >
+            Utility Bill
+          </Typography>
+          <TextField
+            variant="outlined"
+            type="file"
+            hidden
+            fullWidth
+            placeholder="e.g. 0801 234 5678"
+            sx={styles.textField}
+          />
         </Grid>
       </Grid>
     </Box>

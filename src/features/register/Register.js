@@ -13,9 +13,9 @@ export const Register = () => {
   return (
     <PublicLayout>
       {/* <Bank /> */}
-      <CreateAccount />
+      {/* <CreateAccount /> */}
       {/* <Employment /> */}
-      {/* <Identification /> */}
+      <Identification />
       {/* <OTP /> */}
       {/* <Personal /> */}
       {/* <Photo /> */}
