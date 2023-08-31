@@ -11,17 +11,18 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
+import { parse } from "date-fns";
 
 const defaultValues = {
   firstName: "",
   lastName: "",
   email: "",
   phone: "",
-  dob: "",
+  dob: null,
   password: "",
   confirmPassword: "",
 };
@@ -246,7 +247,7 @@ export const CreateAccount = () => {
           >
             DOB
           </Typography>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
             <Controller
               name="dob"
               control={control}
@@ -259,7 +260,7 @@ export const CreateAccount = () => {
                       {...params}
                       required
                       error={!!errors.dob}
-                      helperText={errors?.fob?.message}
+                      helperText={errors.dob?.message}
                       fullWidth
                       autoComplete="off"
                       variant="outlined"
