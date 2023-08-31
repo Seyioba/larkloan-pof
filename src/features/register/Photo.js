@@ -14,7 +14,6 @@ import { AddAPhotoOutlined } from "@mui/icons-material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import TestPhoto from "./TestPhoto";
 
 export const Photo = () => {

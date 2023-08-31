@@ -1,8 +1,6 @@
 import { Box, Grid, ListItem, TextField, Typography } from "@mui/material";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const Bank = () => {
   return (

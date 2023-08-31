@@ -18,7 +18,6 @@ import React from "react";
 import sideImage from "../images/Frame 47417.png";
 import logo from "../images/logo-sm.png";
 import { styles } from "../styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
