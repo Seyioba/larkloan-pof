@@ -1,20 +1,36 @@
-import {
-  Box,
-  Button,
-  Grid,
-  ListItem,
-  Stack,
-  TextField,
-  Typography,
-  Link,
-} from "@mui/material";
-import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Box, Grid, Stack, TextField, Typography, Link } from "@mui/material";
 import React from "react";
 import { styles } from "../../common/styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { DevTool } from "@hookform/devtools";
+
+const defaultValues = {
+  emailOrPhone: "",
+  password: "",
+};
+
+const schema = yup.object().shape({
+  emailOrPhone: yup
+    .string()
+    .email("Please enter a valid email")
+    .required("Email address is required"),
+  password: yup.string().required("Password is required"),
+});
 
 export const LoginCard = () => {
+  const {
+    handleSubmit,
+    register,
+    control,
+    formState: { errors, dirtyFields },
+  } = useForm({
+    defaultValues,
+    resolver: yupResolver(schema),
+    mode: "onTouched",
+  });
+
   return (
     <>
       <Box
@@ -133,6 +149,7 @@ export const LoginCard = () => {
           direction={"column"}
           spacing={3}
           component="form"
+          noValidate
           pt={1}
         >
           <Grid item>
@@ -143,9 +160,14 @@ export const LoginCard = () => {
               Email or Phone Number
             </Typography>
             <TextField
+              name="emailOrPhone"
+              type="text"
               variant="outlined"
               fullWidth
               placeholder="e.g. johndoe@gmail.com"
+              {...register("emailOrPhone")}
+              error={!!errors.emailOrPhone}
+              helperText={errors.emailOrPhone?.message}
               sx={styles.textField}
             />
           </Grid>
@@ -158,10 +180,13 @@ export const LoginCard = () => {
               Password
             </Typography>
             <TextField
+              name="password"
               variant="outlined"
               fullWidth
               type="password"
-              // placeholder=""
+              {...register("password")}
+              error={!!errors.password}
+              helperText={errors.password?.message}
               sx={styles.textField}
             />
             {/* <VisibilityIcon /> */}
@@ -195,7 +220,7 @@ export const LoginCard = () => {
               <Typography sx={{ color: "white" }}>Continue</Typography>
             </Link>
           </Box>
-
+          <DevTool control={control} />
           <Grid
             container
             item
