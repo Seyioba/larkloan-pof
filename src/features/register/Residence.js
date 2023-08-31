@@ -92,15 +92,7 @@ export const Residence = () => {
           >
             City
           </Typography>
-          {/* <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Ojota"
-            sx={styles.textField}
-          /> */}
-          {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
           <FormControl fullWidth sx={styles.textField}>
-            {/* <InputLabel>Ojota</InputLabel> */}
             <Select
               // labelId="demo-simple-select-label"
               // id="demo-simple-select"
@@ -121,12 +113,6 @@ export const Residence = () => {
           >
             State
           </Typography>
-          {/* <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Lagos"
-            sx={styles.textField}
-          /> */}
           <FormControl fullWidth sx={styles.textField}>
             <Select
               value={state}

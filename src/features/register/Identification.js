@@ -1,9 +1,23 @@
-import { Box, Grid, ListItem, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  Grid,
+  ListItem,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
 
 export const Identification = () => {
+  const [identification, setIdentification] = React.useState("");
+  const handleIDChange = (event) => {
+    setIdentification(event.target.value);
+  };
+
   return (
     <Box
       sx={{
@@ -58,20 +72,10 @@ export const Identification = () => {
         </Box>
       </Grid>
 
-      <Typography
-        variant="h6"
-        sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
-      >
+      <Typography variant="h6" sx={styles.formHeader}>
         Identification
       </Typography>
-      <Typography
-        sx={{
-          fontWeight: 600,
-          textAlign: "center",
-          pb: 2,
-          fontSize: 12,
-        }}
-      >
+      <Typography sx={styles.formSubheader}>
         Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet. Lorem Ipsum
         Dolor
       </Typography>
@@ -80,42 +84,39 @@ export const Identification = () => {
         <Grid item>
           <Typography
             variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
+            sx={{ fontWeight: 600, fontSize: "10px", pb: 0.5 }}
           >
-            Residential Address
+            Mode of Identification
           </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="26, Adeyemo close, off Alake Street"
-            sx={styles.textField}
-          />
+          <FormControl fullWidth sx={styles.textField}>
+            <Select
+              // labelId="demo-simple-select-label"
+              // id="demo-simple-select"
+              defaultValue="none"
+              value={identification}
+              label="Identification"
+              onChange={handleIDChange}
+            >
+              <MenuItem value="none">None</MenuItem>
+              <MenuItem value="nin">National Identification Number</MenuItem>
+              <MenuItem value="international_passport">
+                International Passport
+              </MenuItem>
+              {/* <MenuItem value="Bariga">Bariga</MenuItem> */}
+            </Select>
+          </FormControl>
         </Grid>
         <Grid item>
           <Typography
             variant="body1"
             sx={{ fontWeight: 600, fontSize: "10px" }}
           >
-            City
+            ID Number
           </Typography>
           <TextField
             variant="outlined"
             fullWidth
-            placeholder="Ojota"
-            sx={styles.textField}
-          />
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            sx={{ fontWeight: 600, fontSize: "10px" }}
-          >
-            State
-          </Typography>
-          <TextField
-            variant="outlined"
-            fullWidth
-            placeholder="Lagos"
+            placeholder="e.g. ABC123456"
             sx={styles.textField}
           />
         </Grid>

@@ -96,20 +96,10 @@ export const Photo = () => {
         </Typography>
       </Box> */}
 
-      <Typography
-        variant="h6"
-        sx={{ fontWeight: "bold", textAlign: "center", pb: 1 }}
-      >
+      <Typography variant="h6" sx={styles.formHeader}>
         Photo
       </Typography>
-      <Typography
-        sx={{
-          fontWeight: 600,
-          textAlign: "center",
-          pb: 2,
-          fontSize: 12,
-        }}
-      >
+      <Typography sx={styles.formSubheader}>
         Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet. Lorem Ipsum
         Dolor
       </Typography>
