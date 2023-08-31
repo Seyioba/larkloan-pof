@@ -11,7 +11,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 
 export const CreateAccount = () => {
   return (
@@ -139,7 +139,7 @@ export const CreateAccount = () => {
           >
             DOB
           </Typography>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker sx={styles.textField} />
           </LocalizationProvider>
         </Grid>

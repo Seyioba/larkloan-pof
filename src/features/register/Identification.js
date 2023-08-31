@@ -1,10 +1,24 @@
-import { Box, Grid, ListItem, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  Grid,
+  ListItem,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import React from "react";
 import { styles } from "../../common/styles";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 export const Identification = () => {
+  const [identification, setIdentification] = React.useState("");
+  const handleIDChange = (event) => {
+    setIdentification(event.target.value);
+  };
+
   return (
     <Box
       sx={{
@@ -135,6 +149,32 @@ export const Identification = () => {
             placeholder="e.g. 0801 234 5678"
             sx={styles.textField}
           />
+        </Grid>
+
+        <Grid item>
+          <Typography
+            variant="body1"
+            sx={{ fontWeight: 600, fontSize: "10px", pb: 0.5 }}
+          >
+            Mode of Identification
+          </Typography>
+          <FormControl fullWidth sx={styles.textField}>
+            <Select
+              // labelId="demo-simple-select-label"
+              // id="demo-simple-select"
+              defaultValue="none"
+              value={identification}
+              label="Identification"
+              onChange={handleIDChange}
+            >
+              <MenuItem value="none">None</MenuItem>
+              <MenuItem value="nin">National Identification Number</MenuItem>
+              <MenuItem value="international_passport">
+                International Passport
+              </MenuItem>
+              {/* <MenuItem value="Bariga">Bariga</MenuItem> */}
+            </Select>
+          </FormControl>
         </Grid>
       </Grid>
     </Box>
