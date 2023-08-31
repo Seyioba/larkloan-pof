@@ -1,6 +1,18 @@
 import sideImage from "./images/Frame 47417.png";
 
 export const styles = {
+  formHeader: {
+    fontWeight: 700,
+    fontSize: "30px",
+    textAlign: "center",
+    letterSpacing: -1,
+  },
+  formSubheader: {
+    fontWeight: 600,
+    textAlign: "center",
+    pb: 2,
+    fontSize: 15,
+  },
   textField: {
     backgroundColor: "#9A9FBF1A",
     color: "#9A9FBF",
@@ -9,8 +21,8 @@ export const styles = {
     // height:"60px",
     borderRadius: "8px",
     fontWeight: 600,
-    fontSize: "10px",
-    maxHeight: "40px",
+    fontSize: 15,
+    height: "50px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
